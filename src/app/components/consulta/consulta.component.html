@@ -1,0 +1,58 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <form action="" class="container">
+      <div class="row jsutify-content-center align-items-center">
+        <div class="col-xs-12 col-md-4">
+          <div class="">
+            <label class="form-label">IPC</label>
+            <input class="form-control" name="ipc" [(ngModel)]="form.ipc" />
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="">
+            <label class="form-label">Id</label>
+            <input class="form-control" name="id" [(ngModel)]="form.id" />
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <button
+            type="button"
+            class="btn btn-primary"
+            [disabled]="form.ipc == 0 || form.id == ''"
+            (click)="handleClick()"
+          >
+            Consultar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="card my-3">
+  <div class="card-body">
+    <div>
+      <b>Id:</b>&nbsp;
+      <span>{{ employee.id }}</span>
+    </div>
+    <div>
+      <b>Nombre:</b>&nbsp;
+      <span>{{ employee.employee_name }}</span>
+    </div>
+    <div>
+      <b>Salario:</b>&nbsp;
+      <span>€ {{ employee.employee_salary | number: "4.0-0" }}</span>
+    </div>
+    <div>
+      <b>Edad:</b>&nbsp;
+      <span>{{ employee.employee_age }}</span>
+    </div>
+    <div>
+      <b>IPC Aplicado:</b>&nbsp;
+      <span>€ {{ newIpc | number: "4.0-0" }}</span>
+    </div>
+    <div>
+      <b>Total:</b>&nbsp;
+      <span>€ {{ employee.employee_salary + newIpc | number: "4.0-0" }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Salario</th>
+          <th>Edad</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="employee" *ngFor="let employee of listEmployees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.employee_name }}</td>
+          <td>€ {{ employee.employee_salary | number: "4.0-0" }}</td>
+          <td>{{ employee.employee_age }}</td>
+          <td>{{ employee.profile_image }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
